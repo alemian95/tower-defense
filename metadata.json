@@ -1,0 +1,6 @@
+{
+  "name": "Tower defense",
+  "description": "Tower defense tattico a griglia con costruzione libera del labirinto, percorso minimo dinamico, cinque torri specializzate e nemici con abilità uniche.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
