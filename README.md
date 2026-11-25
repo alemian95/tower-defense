@@ -1,20 +1,54 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Tower Defense
 
-# Run and deploy your AI Studio app
+Tower defense tattico a griglia con costruzione libera del labirinto, ricalcolo dinamico del percorso minimo e difesa su 15 ondate.
 
-This contains everything you need to run your app locally.
+## Descrizione
 
-View your app in AI Studio: https://ai.studio/apps/f97495e3-3cf6-49b7-8366-b74cf37724f3
+In **Tower Defense** costruisci il tuo labirinto di torri direttamente sulla griglia di gioco per allungare e deviare il percorso più breve dei nemici verso la casa, massimizzando il tempo sotto tiro.
 
-## Run Locally
+### Caratteristiche principali
 
-**Prerequisites:**  Node.js
+- **Labirinto e pathfinding dinamico**: ogni torre piazzata ricalcola il percorso minimo in tempo reale (impedendo di sigillare completamente il passaggio).
+- **5 torri specializzate** (potenziabili fino al livello 3 e vendibili al 70% del valore investito):
+  - **Torre Balestra** (`1`) — Fuoco rapido ed economica, ideale per modellare il labirinto.
+  - **Cannone d'Assedio** (`2`) — Proiettili esplosivi con danno ad area.
+  - **Obelisco Gelo** (`3`) — Impulsi criogenici ad area che rallentano i nemici.
+  - **Torre Tesla** (`4`) — Scariche elettriche a catena con danno bonus contro gli scudi.
+  - **Torre Cecchino** (`5`) — Gittata estesa e colpo perforante che ignora l'armatura.
+- **6 tipologie di nemici**: *Esploratore* (rapido), *Fante d'Assalto*, *Golem Corazzato* (armatura alta), *Sciamano* (rigenerazione HP), *Sentinella Scudata* (scudo energetico) e *Titano d'Assedio* (boss ogni 5 ondate).
+- **6 mappe**: *Radura Aperta*, *Passo Roccioso*, *Valle dei Pilastri*, *Altopiano Quadrato*, *Cittadella Centrale* e *Gola del Canyon*.
+- **3 difficoltà**: *Facile*, *Normale* e *Difficile*.
 
+## Sviluppo
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Il progetto è un'applicazione client-side realizzata con **React 19**, **TypeScript**, **Vite**, **Tailwind CSS v4** e **HTML5 Canvas** (non richiede variabili d'ambiente né backend).
+
+### Prerequisiti
+
+- Node.js
+- npm
+
+### Comandi principali
+
+```bash
+# Installa le dipendenze
+npm install
+
+# Avvia il server di sviluppo (http://localhost:3000)
+npm run dev
+
+# Esegue il type-check TypeScript
+npm run lint
+
+# Crea la build di produzione in dist/
+npm run build
+
+# Avvia l'anteprima della build di produzione
+npm run preview
+```
+
+### Struttura del codice
+
+- `src/features/game/` — Motore di gioco (`engine.ts`), pathfinding (`pathfinding.ts`), rendering Canvas (`renderer.ts`), audio (`audio.ts`) e configurazioni di torri, nemici, mappe, difficoltà e ondate (`config/`).
+- `src/features/hud/` — Interfaccia di gioco (`TopHud.tsx`, `TowerDock.tsx`).
+- `src/features/screens/` — Schermate di menu e riepilogo partita (`TitleMenu.tsx`, `EndModal.tsx`).

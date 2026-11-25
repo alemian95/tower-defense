@@ -37,7 +37,7 @@ export function TitleMenu({
               Difesa tattica a labirinto · {TARGET_WIN_WAVE} ondate
             </p>
             <h1 className="font-display mt-2 text-4xl md:text-5xl font-bold tracking-tight text-slate-50 text-balance">
-              Bastione sul Sentiero
+              Tower Defense
             </h1>
             <p className="mt-3 text-base text-slate-300 leading-relaxed">
               Ogni torre costruita sulla griglia modella il campo di battaglia: i

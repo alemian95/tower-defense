@@ -41,7 +41,7 @@ export function TopHud({
           className="font-display text-lg font-semibold tracking-tight text-slate-100 hover:text-amber-300 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
           title="Torna al menu principale"
         >
-          Bastione sul Sentiero
+          Tower Defense
         </button>
 
         <div className="hidden sm:block h-5 w-px bg-slate-800" aria-hidden="true" />
